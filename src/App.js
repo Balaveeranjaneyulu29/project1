@@ -1,9 +1,9 @@
 import React from 'react'
-import Navfun from './NAV/Navfun'
+import Weatherapp from './weather/Weatherapp'
 const App = () => {
   return (
     <div>
-      <Navfun/>
+      <Weatherapp/>
     </div>
   )
 }
