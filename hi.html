@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button onclick="postData()">post</button>
+   <button onclick="getData()">get</button> 
+   <button onclick="putData()">put</button>
+   <button onclick="deleteData()">Delete</button>
+
+   <script>
+    async function postData() {
+      let res = await fetch(
+            "http://localhost:4002/products",
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    "id": 4,
+                    "name": "OnePlus 9",
+                    "brand": "OnePlus",
+                    "price": 729,
+                    "specs": {
+                      "screenSize": "6.55 inches",
+                      "battery": "4500 mAh",
+                      "camera": "48 MP"
+                    }
+                }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }
+        );
+       let data = await res.json();
+       console.log(data);
+    }
+    async function getData() {
+      let res = await fetch("http://localhost:4002/products");
+      let data = await res.json();
+      console.log(data);
+    }
+
+    async function putData() {
+        let res = await fetch("http://localhost:4002/products/3", {
+            method: 'PUT',
+            body: JSON.stringify({
+                "id": "3",
+                "name": "OnePlus 9",
+                "brand": "ASUS",
+                "price": 729,
+                "specs": {
+                  "screenSize": "6.55 inches",
+                  "battery": "4500 mAh",
+                  "camera": "48 MP"
+                }
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        let data = await res.json();
+        console.log(data);
+    }
+    async function deleteData() {
+      let ra = await fetch("http://localhost:4002/products/4",{
+        method:'DELETE',
+        headers:{
+            "Content-Type":"application/json"
+        }
+     } );
+      let d = await ra.json();
+      console.log(d);
+    }
+   </script>
+</body>
+</html>

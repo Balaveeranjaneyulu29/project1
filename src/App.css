@@ -1,0 +1,7 @@
+.main{
+    background-color:rgb(9, 198, 9);
+    box-shadow: 10px 10px 15px 20px rgb(75, 247, 75);
+    display: flex;
+    justify-content: center;
+    margin: 25px 25px 25px 25px;
+}

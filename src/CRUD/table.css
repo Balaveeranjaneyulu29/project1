@@ -1,0 +1,16 @@
+.box{
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    padding-top: 30px;
+    width: 800px;
+    height: 200px;
+    padding: 0;
+
+}
+.header{
+    color: rgb(222, 130, 10);
+}
+.tabel{
+    background-color: antiquewhite;
+}
